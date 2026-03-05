@@ -4,12 +4,7 @@ public class Worker {
     private String birthDate;
     protected String endDate;
 
-    public int getAge(){
-        int todayYear = 2026;
-        int intBirth = Integer.parseInt(birthDate.substring(6));
 
-        return todayYear-intBirth;
-    }
 
     public double collectPay(){
         return 0.0;
@@ -25,9 +20,17 @@ public class Worker {
     }
 
     public Worker(String name,String birthDate,String endDate){
+        this.name = name;
+        this.birthDate = birthDate;
         terminate(endDate);
     }
 
+    public int getAge(){
+        int todayYear = 2026;
+        int intBirth = Integer.parseInt(birthDate.substring(6));
+
+        return todayYear-intBirth;
+    }
 
 
     @Override
