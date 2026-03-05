@@ -3,10 +3,8 @@
 public class Main {
     public static void main(String[] args) {
 
-        Employee max = new Employee("max","10/10/2010","10/10/2010");
-        System.out.println(max);
-        System.out.println("Age =>" + max.getAge());
-        System.out.println("Paay =>" + max.collectPay());
+            HourlyEmployee max = new HourlyEmployee("paketo","01/01/1010","10/10/10","10/10/10",20000.00);
+            System.out.println(max);
 
         }
     }

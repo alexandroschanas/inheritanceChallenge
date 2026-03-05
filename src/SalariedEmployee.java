@@ -8,16 +8,29 @@ public class SalariedEmployee extends Employee{
 
     }
 
+    public SalariedEmployee(String name, String birthDate, String hireDate, String endDate, double annualSalary, boolean isRetired) {
+        super(name, birthDate, hireDate, endDate);
+        this.annualSalary = annualSalary;
+        this.isRetired = isRetired;
+    }
+
+
     public boolean retire(){
         this.isRetired = true;
         return this.isRetired;
+    }
+
+    public double collectPay(){
+        double paycheck = annualSalary / 26;
+        double adjustedPay = (isRetired) ? 0.9 * paycheck : paycheck;
+        return Math.round(adjustedPay * 100.0) / 100.0;
     }
 
 
     @Override
     public String toString() {
         return "SalariedEmployee{" +
-                "annualSalary=" + annualSalary +
+                "biweekly salary=" + collectPay() +
                 ", isRetired=" + isRetired +
                 "} " + super.toString();
     }
